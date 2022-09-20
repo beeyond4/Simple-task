@@ -1,0 +1,20 @@
+nametag = []
+team1 = []
+team2 = []
+
+n = int(input())
+for _ in range(n):
+    info = list(input().split(' '))
+    nametag.append([info[0], int(info[1])])
+for i in nametag:
+    if i[1] < 20 or i[1] > 40:
+        team1.append(i[0]+',')
+    else:
+        team2.append(i[0]+',')
+
+team1.sort(), team2.sort()
+team1.append(team1.pop(-1).replace(',','.'))
+team2.append(team2.pop(-1).replace(',','.'))
+
+print('Team 1:', *team1, sep = ' ')
+print('Team 2:', *team2, sep = ' ')
